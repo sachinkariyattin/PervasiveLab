@@ -1,5 +1,6 @@
 package com.pervasive.sachin.pervasivequiz;
 
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class Soccer extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override
@@ -163,10 +165,23 @@ public class Soccer extends Fragment {
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
         }
+        else {
+
+            Fragment welcomeFragment = new WelcomeMessage();
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            Bundle args = new Bundle();
+            args.putString("SOCCER_SCORE", String.valueOf(mScore));
+            welcomeFragment.setArguments(args);
+            ft.replace(R.id.content_main, welcomeFragment);
+            ft.commit();
+        }
     }
 
 
     private void updateScore(int point) {
+        if (mScore < 0) {
+            mScore = 0;
+        }
         if (mScore >= 0 && mQuestionNumber <= 5 && mScore <= 10 ) {
             mScoreView.setText("" + mScore);
         }
