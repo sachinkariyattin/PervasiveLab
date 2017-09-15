@@ -3,7 +3,7 @@ package com.pervasive.sachin.pervasivequiz;
 public class CricketQuestionLibrary {
 
     private String mQuestions [] = {
-            "How many internation 100's has Sachin Tendulkar scored?",
+            "How many international 100's has Sachin Tendulkar scored?",
             "He is the captain of Indian cricket team.",
             "Hardik's last name.",
             "Number of world cups won by Australia",

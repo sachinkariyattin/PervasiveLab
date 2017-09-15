@@ -4,7 +4,7 @@ public class TechQuestionLibrary {
 
     private String mQuestions [] = {
             "Who is the CEO of Amazon?",
-            "Who is the CEO of Alphabet Inc?",
+            "Who is the CEO of Google?",
             "Who is the CEO of Facebook?",
             "Who is the CEO of Apple?",
             "Which phone does Apple make?"
